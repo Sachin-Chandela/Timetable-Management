@@ -5,15 +5,15 @@ Myself **Sachin Chandela**\
 And this is the Repositories for Timetable Management System
 Includes various classes such as course sections timetable and various function.
 
-## COURSE
+## Course
 
 course is a class that takes input such as eg.(course_name,course_code,Instructure_Name,exam_date) and varoius function like to get all sections to add section and to print basic information about course
 
-## SECTIONS
+## Sections
 
 as course it is also a class which takes (lecture name date and slot) 
 
-## TIMETABLE
+## Timetable
 it's a Class to enroll in a course and checking for clashes 
 
 # Implementation 
@@ -21,10 +21,10 @@ it's a Class to enroll in a course and checking for clashes
 from timemanage import Course, Section, Timetable
 
 #To intialize course
-my_course=COURSE("CSE","CS F11","Rajiv Kumar",["23-12-2023"])
+my_course=Course("CSE","CS F11","Rajiv Kumar",["23-12-2023"])
 
 # To intialize Sections
-my_section=SECTIONS("Lecture",["Monday","Wednesday","Friday"],["12pm-01pm","12pm-01pm","12pm-01pm"])
+my_section=Sections("Lecture",["Monday","Wednesday","Friday"],["12pm-01pm","12pm-01pm","12pm-01pm"])
 ```
 
 ### To add section to course
@@ -41,7 +41,7 @@ for i in get_section:
 
 ### To enroll a subject into a course and to export it to a csv file
 ``` python
-my_timetable=TIMETABLE()
+my_timetable=Timetable()
 my_timetable.enroll_subject(my_course)
 my_timetable.export_to_csv("timetable.csv")
 ```

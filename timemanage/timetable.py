@@ -1,6 +1,6 @@
 import csv
 
-class TIMETABLE:
+class Timetable:
     def __init__(self,):
         self.courses=[]
     def enroll_subject(self,course):
@@ -11,13 +11,18 @@ class TIMETABLE:
         for i in range(0,n):
             b=input(f"ENter your {i+1}th date:-")
             exam_ddate.append(b)
+
             
         for course in self.courses:
             for date in course.exam_date:
                 if date in exam_ddate:
                     print(f"exam clash of :{course.course_name} on {date}")
                 else:
-                    exam_ddate.add(date)
+                    exam_ddate.append(date)
+        
+        for course in self.courses:
+            exam_ddate.pop()
+            course.exam_date.append((exam_ddate))
         
     def section_clashes(self):
         section_schedule={}
@@ -50,8 +55,8 @@ class TIMETABLE:
                         {
                             "Course Code": course.course_code,
                             "Course Name": course.course_name,
-                            "Section Type": course.Instructure_Name,
-                            "Exam Dates": ", ".join(course.exam_date),
+                            "Instructor": course.Instructure_Name,
+                            "Exam Dates": course.exam_date,
                             "Section Type": section.section_type,
                             "Day": section.day,
                             "Time Slots": ", ".join(section.slot),
@@ -59,7 +64,7 @@ class TIMETABLE:
                     )
 
 # to export to a csv file
-my_timetable = TIMETABLE()
+my_timetable = Timetable()
 # # ... (enroll subjects and check clashes)
 my_timetable.export_to_csv("timetable.csv")
 

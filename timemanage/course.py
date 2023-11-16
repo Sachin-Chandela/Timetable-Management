@@ -1,5 +1,5 @@
 import openpyxl
-class COURSE:
+class Course:
     
     def __init__(self,course_name,course_code,Instructure_Name,exam_date=[]):
         self.course_name=course_name
@@ -54,7 +54,7 @@ def populate_subject(new_section, file_path):
         exam_dates = row[exam_dates_index].split(", ")
 
         # Create a new course instance
-        new_course = COURSE(course_code, course_name, instructor, exam_dates)
+        new_course = Course(course_code, course_name, instructor, exam_dates)
 
         # Populate lecture sections using the method in the Course class
         new_course._populate_section(new_section)
@@ -62,7 +62,7 @@ def populate_subject(new_section, file_path):
         # Add the new course to the persistent database (you can define your database logic here)
         # For example, you might add it to a list or store it in a database
         # For simplicity, I'll just print the course details
-        print(f"Added new course: {new_course.course_code} - {new_course.course_name}")
+        # print(f"Added new course: {new_course.course_code} - {new_course.course_name}")
 
 
 
