@@ -27,26 +27,26 @@ my_course=course("CSE","CS F11","Rajiv Kumar",["23-12-2023"])
 my_section=sections("Lecture",["Monday","Wednesday","Friday"],["12pm-01pm","12pm-01pm","12pm-01pm"])
 ```
 
-# To add section to course
+### To add section to course
 ``` python
 my_course.add(my_sections)
 ```
 
-# To get all sections
+### To get all sections
 ``` python
 get_section=my_course.get_all_section()
 for i in get_section:
     ptint(i)
 ```
 
-# To enroll a subject into a course and to export it to a csv file
+### To enroll a subject into a course and to export it to a csv file
 ``` python
 my_timetable=timetable()
 my_timetable.enroll_subject(my_course)
 my_timetable.export_to_csv("timetable.csv")
 ```
 
-# For checking clashes 
+### For checking clashes 
 ``` python
 my_timetable.clashes()
 
