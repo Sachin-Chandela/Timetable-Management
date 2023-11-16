@@ -24,7 +24,7 @@ class timetable:
         for course in self.courses:
             for section in course.get_all_section():
                 if section.day in section_schedule and section.slot in section_schedule:
-                    print(f"Clashes of {section.lecture_name} on {section.day} , {section.slot} ")
+                    print(f"Clashes of {section.section_type} on {section.day} , {section.slot} ")
                 else:
                     continue
 
@@ -36,7 +36,7 @@ class timetable:
                 "Course Name",
                 "Instructor",
                 "Exam Dates",
-                "lecture Name",
+                "Section Type",
                 "Day",
                 "Time Slots",
             ]
@@ -50,9 +50,9 @@ class timetable:
                         {
                             "Course Code": course.course_code,
                             "Course Name": course.course_name,
-                            "Instructor": course.Instructure_Name,
+                            "Section Type": course.Instructure_Name,
                             "Exam Dates": ", ".join(course.exam_date),
-                            "lecture Name": section.lecture_name,
+                            "Section Type": section.section_type,
                             "Day": section.day,
                             "Time Slots": ", ".join(section.slot),
                         }
