@@ -1,4 +1,4 @@
-class sections:
+class SECTIONS:
     def __init__(self,section_type,day=[],slot=[]):
         self.section_type=section_type
         self.day=day

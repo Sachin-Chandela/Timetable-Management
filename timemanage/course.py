@@ -1,5 +1,5 @@
 import openpyxl
-class course:
+class COURSE:
     
     def __init__(self,course_name,course_code,Instructure_Name,exam_date=[]):
         self.course_name=course_name
@@ -54,7 +54,7 @@ def populate_subject(new_section, file_path):
         exam_dates = row[exam_dates_index].split(", ")
 
         # Create a new course instance
-        new_course = course(course_code, course_name, instructor, exam_dates)
+        new_course = COURSE(course_code, course_name, instructor, exam_dates)
 
         # Populate lecture sections using the method in the Course class
         new_course._populate_section(new_section)

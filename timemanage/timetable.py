@@ -1,6 +1,6 @@
 import csv
 
-class timetable:
+class TIMETABLE:
     def __init__(self,):
         self.courses=[]
     def enroll_subject(self,course):
@@ -59,7 +59,7 @@ class timetable:
                     )
 
 # to export to a csv file
-my_timetable = timetable()
+my_timetable = TIMETABLE()
 # # ... (enroll subjects and check clashes)
 my_timetable.export_to_csv("timetable.csv")
 
